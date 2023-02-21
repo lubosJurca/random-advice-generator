@@ -1,23 +1,41 @@
-import logo from './logo.svg';
+import React, {useState, useEffect} from "react"
+import Axios from "axios"
 import './App.css';
 
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
+import {faDiceFive} from "@fortawesome/free-solid-svg-icons"
+
 function App() {
+
+  const [advice,setAdvice] = useState({
+    id: "",
+    description: ""
+  })
+
+const callAdvice = async() => {
+   const data = await Axios.get("https://api.adviceslip.com/advice")
+   setAdvice({
+     id: data.data.slip.id,
+     description: data.data.slip.advice
+   })
+ 
+  }
+
+
+      
+useEffect(() => {
+  callAdvice()
+}, [])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      <div className="wrapper">
+        <small>Advice #{advice.id}</small>
+        <p>"{advice.description}."</p>
+        
+      </div>
+      <FontAwesomeIcon icon={faDiceFive} className="icon" onClick={callAdvice} />
     </div>
   );
 }

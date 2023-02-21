@@ -1,38 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap');
+
+body {
+    background: #202733;
+    display: grid;
+    place-content: center;
+    width: 100vw;
+    height: 100vh;
+}
+
 .App {
-  text-align: center;
+    font-family: 'Manrope', sans-serif;
+    background: #313A48;
+    width: 540px;
+    height: 360px;
+    
+    display: grid;
+    place-content: center;
+    text-align: center;
+    box-shadow: 30px 50px 80px rgba(0, 0, 0, 0.100202);
+    border-radius: 15px;
+    position: relative;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.wrapper {
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 6em;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+small {
+    color: #53FFAA ;
+    text-transform: uppercase;
+
+    font-style: normal;
+    font-weight: 800;
+    font-size: 13px;
+    line-height: 18px;
+    letter-spacing: 4px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+p {
+    color: #CEE3E9 ;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 28px;
+    line-height: 38px;
+    padding-bottom:  1em;
+    border-bottom: 1px solid #4F5D74 ;
 }
 
-.App-link {
-  color: #61dafb;
+.icon {
+    background: #53FFAA;
+    padding: 0.7em;
+    border-radius: 50%;
+    font-size: 24px;
+    position: absolute;
+    bottom: -1.1em;
+    left: 45%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.icon:hover {
+    background: #53FFAA;
+    box-shadow: 0px 0px 40px #53FFAA;
+}
+
+.icon:active{
+    scale: 0.9;
 }
